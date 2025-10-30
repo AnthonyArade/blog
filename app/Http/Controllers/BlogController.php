@@ -15,7 +15,7 @@ class BlogController extends Controller
     use AuthorizesRequests, ValidatesRequests;
     public function index()
     {
-        $articles = Article::All();
+        $articles = Article::orderBy('created_at','desc')->paginate(10);
         return view('welcome', compact('articles'));
     }
 

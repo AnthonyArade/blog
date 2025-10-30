@@ -45,21 +45,5 @@
             </table>
         </div>
     </div>
-    <div class="mt-6 flex justify-between items-center">
-        <div class="text-sm text-gray-700">
-            Showing <span class="font-medium">1</span> to <span class="font-medium">5</span> of <span
-                class="font-medium">12</span> results
-        </div>
-        <div class="flex space-x-2">
-            <button
-                class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition">Previous</button>
-            <button
-                class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition">1</button>
-            <button class="px-3 py-1 rounded border border-blue-500 bg-blue-500 text-white">2</button>
-            <button
-                class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition">3</button>
-            <button
-                class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition">Next</button>
-        </div>
-    </div>
+    {{ $articles->links('vendor.pagination.custom') }}
 </main>
