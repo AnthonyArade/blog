@@ -4,7 +4,7 @@
                 <div class="flex items-center space-x-2">
                     <i class="fas fa-blog text-blue-600 text-2xl"></i>
                     <a href="{{ route('index') }}">
-                    <h1 class="text-2xl font-bold text-gray-800">BlogSpace</h1>
+                        <h1 class="text-2xl font-bold text-gray-800">BlogSpace</h1>
                     </a>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -15,12 +15,21 @@
                                 <i class="fas fa-sign-in-alt"></i>
                                 <a href="{{ route('dashboard') }}">Dashboard</a>
                             </button>
+
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button
+                                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center space-x-2">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <a href="{{ route('logout') }}">Logout</a>
+                                </button>
+                            </form>
                         @else
                             <button
                                 class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center space-x-2">
                                 <i class="fas fa-sign-in-alt"></i>
                                 <a href="{{ route('login') }}">
-                                    Log in
+                                    Connexion
                                 </a>
                             </button>
                             @if (Route::has('register'))
@@ -28,7 +37,7 @@
                                     class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center space-x-2">
                                     <i class="fas fa-sign-in-alt"></i>
                                     <a href="{{ route('register') }}">
-                                        Register
+                                        S'inscrire
                                     </a>
                                 </button>
                             @endif
@@ -41,7 +50,7 @@
             </div>
         @endif
     </header>
-        @if (session('status'))
+    @if (session('status'))
         <div id="alert-border-4"
             class="flex items-center p-4 mb-4 text-yellow-800 border-t-4 border-yellow-300 bg-yellow-50 dark:text-yellow-300 dark:bg-gray-800 dark:border-yellow-800"
             role="alert">
